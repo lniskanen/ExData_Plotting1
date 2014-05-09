@@ -21,7 +21,7 @@ dataSet[,DateTime:=as.POSIXct(paste0(dataSet$Date,dataSet$Time),format=format("%
 Sys.setlocale("LC_TIME", "en_US.utf8")
 
 ## Plot
-plot(dataSet$DateTime,dataSet$Global_active_power, type="l",xlab="Weekday-Hour", ylab="Global Active Power (kilowatts)"
+plot(dataSet$DateTime,dataSet$Global_active_power, type="l",xlab="", ylab="Global Active Power (kilowatts)"
 )
 
 ## Copy screen device to PNG file
