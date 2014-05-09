@@ -24,12 +24,21 @@ Sys.setlocale("LC_TIME", "en_US.utf8")
 with(dataSet, plot(dataSet$DateTime,dataSet$Sub_metering_1,type="l",col="black",ylab="Energy sub metering", xlab=" "))
 with(subset(dataSet), lines(dataSet$DateTime,dataSet$Sub_metering_2,type="l",col="red"))
 with(subset(dataSet), lines(dataSet$DateTime,dataSet$Sub_metering_3,type="l",col="blue"))
-legend("topright", lty= c(1), col = c("black", "red","blue"), legend =c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
+legend("topright", text.width =strwidth("Sub_metering_1"),  lty= c(1), col = c("black", "red","blue"), legend =c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
 
 
 ## Copy screen device to PNG file
 if(file.exists(destFile)) file.remove(destFile)
-dev.copy(png, file=destFile,width=480,height=480)
+png(destFile, width=480, height=480)
 
-## Close the screen device
+## re-plot to png device
+with(dataSet, plot(dataSet$DateTime,dataSet$Sub_metering_1,type="l",col="black",ylab="Energy sub metering", xlab=" "))
+with(subset(dataSet), lines(dataSet$DateTime,dataSet$Sub_metering_2,type="l",col="red"))
+with(subset(dataSet), lines(dataSet$DateTime,dataSet$Sub_metering_3,type="l",col="blue"))
+legend("topright", text.width =strwidth("Sub_metering_1"),  lty= c(1), col = c("black", "red","blue"), legend =c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
+
+
+##dev.copy(png, file=destFile,width=480,height=480)
+
+## Close the png screen device
 dev.off()

@@ -3,7 +3,7 @@
 This assingment is fork from <a href="https://github.com/rdpeng/ExData_Plotting1">Plotting Assignment 1 for Exploratory Data Analysis</a>
 
 
-## Loading the data and running the scripts for plotting
+## Running scripts
 
 Download data set from
 * <b>Dataset</b>: <a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip">Electric power consumption</a> [20Mb]
